@@ -1,0 +1,10 @@
+# ROCStories-derived data and model outputs never go to GitHub (licence)
+data/
+runs/
+eval/
+*.zip
+*.csv
+
+__pycache__/
+.ipynb_checkpoints/
+.venv/
