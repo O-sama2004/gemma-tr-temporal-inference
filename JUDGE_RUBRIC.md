@@ -54,23 +54,4 @@ J0002,0,farklı olay: sahile değil göle gitti
 - **Secondary string metrics:** ROUGE-L F1 and chrF against the gold answer.
 - **Judge self-consistency:** agreement on the hidden duplicates.
 
-The "+10%" target is reported both ways, as +10 points absolute and as +10% relative. State in the report which one the advisor means.
-
-## Prompt for an API judge (optional)
-
-If a model is used through an API instead of in chat, send each row with this prompt, at temperature 0:
-
-```
-Sen bir değerlendiricisin. Aşağıda kısa bir hikâye (Bölüm 1, 2, 3), bir soru, referans cevap ve bir aday cevap var.
-Aday cevabı yazan model yalnızca Bölüm 2'yi gördü. Soru yönü: {direction} (past = cevap Bölüm 1'de, future = cevap Bölüm 3'te).
-Puanla: 2 = doğru (referansla ya da gizli bölümle aynı temel bilgi), 1 = kısmen doğru (uyumlu ama eksik/daha genel),
-0 = yanlış (çelişiyor, farklı bilgi, hikâyede dayanağı olmayan tahmin, genel/boş cevap).
-Sadece JSON döndür: {"score": 0|1|2, "reason": "<10 kelime"}
-
-Bölüm 1: {part1}
-Bölüm 2: {part2}
-Bölüm 3: {part3}
-Soru: {question}
-Referans cevap: {gold_answer}
-Aday cevap: {candidate_answer}
-```
+The "+10%" target is reported both ways, as +10 points absolute and as +10% relative.
